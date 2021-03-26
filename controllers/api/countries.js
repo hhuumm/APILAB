@@ -1,5 +1,6 @@
 
 const Country = require('../../models/country');
+
 module.exports = {
   index,
   show,
@@ -29,7 +30,7 @@ function show(req, res) {
   });
 }
 function create(req, res) {
-  Country.create(req.body).then(function(Country) {
+  Country.create(req.query).then(function(Country) {
     res.status(201).json(Country);
   });
 }
